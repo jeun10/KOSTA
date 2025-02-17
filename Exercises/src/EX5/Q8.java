@@ -13,7 +13,6 @@ public class Q8 {
 			counter[answer[i]-1]+=1;
 		}
 		for (int i = 0; i < counter.length; i++) {
-			int cnt=0;
 			if(counter[i]!=0) {
 				System.out.print(counter[i]);
 				for(int j=0;j<counter[i];j++) {
@@ -21,10 +20,6 @@ public class Q8 {
 					
 				}
 			}
-			
-			/*
-			 * (2) 알맞은 코드를 넣어 완성하시오.
-			 */
 			System.out.println();
 		}
 	}

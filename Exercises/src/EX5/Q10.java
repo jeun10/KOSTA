@@ -22,6 +22,10 @@ public class Q10 {
 			else if(ch>='a'&&ch<='z') {
 				result+=abcCode[ch-'a'];
 			}
+			else {
+				System.out.println("!입력범위 초과!");
+				break;
+			}
 		}
 		System.out.println("src:" + src);
 		System.out.println("result:" + result);
