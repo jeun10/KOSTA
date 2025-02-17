@@ -22,7 +22,7 @@ public class DArrayTest2 {
 			}
 			//마지막칸 [3][4] 채우기
 			if(i==darr1.length-1) {
-				for(int j=0;j<darr2.length;j++) {
+				for(int j=0;j<darr1[i].length;j++) {
 					darr2[darr2.length-1][darr2[0].length-1]+=darr2[i+1][j];
 				}
 			}
