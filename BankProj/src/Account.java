@@ -18,15 +18,13 @@ public class Account {
 	}
 
 	boolean deposit(int money) {
-		if (money <= 0)
-			return false;
+		if (money <= 0)	return false;
 		balance += money;
 		return true;
 	}
 
 	boolean withdraw(int money) {
-		if (money <= 0)
-			return false;
+		if (balance < money) return false;
 		balance -= money;
 		return true;
 
