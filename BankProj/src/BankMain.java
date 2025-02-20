@@ -8,7 +8,7 @@ public class BankMain {
 
 			switch (sel) {
 			case 1:
-				bank.makeAccount();
+				bank.selMakeAccount();
 				break;
 			case 2:
 				bank.deposit();

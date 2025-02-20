@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 import acc.Account;
+import acc.SpecialAccount;
 
 public class Bank {
 	Account[] accs = new Account[100];
@@ -24,10 +25,21 @@ public class Bank {
 
 		return sel;
 	}
+	
+	void selMakeAccount() {
+		System.out.println("[계좌계설]");
+		System.out.println("1.일반계좌");
+		System.out.println("2.특수계좌");
+		System.out.print("선택>>");
+		int sel = Integer.parseInt(sc.nextLine());
+		if(sel==1) makeAccount();
+		else if(sel==2) makeSpecialAccount();
 
-	void makeAccount() { //계좌 만들기
+	}
 
-		System.out.println("[계좌개설]");
+	void makeAccount() { //일반계좌 만들기
+
+		System.out.println("[일반 계좌개설]");
 
 		
 		System.out.print("계좌번호>>");
@@ -49,6 +61,36 @@ public class Bank {
 		cnt++;
 		
 	}
+	
+	void makeSpecialAccount() { //특수 계좌 만들기
+
+		System.out.println("[특수계좌개설]");
+
+		
+		System.out.print("계좌번호>>");
+		String id = sc.nextLine();
+		
+		System.out.print("이름>>");
+		String name = sc.nextLine();
+	
+		System.out.print("입금 금액(원)>>");
+		int balance =Integer.parseInt(sc.nextLine());
+		
+		System.out.print("등급(VIP,Gold,Silver,Normal)");
+		String grade = sc.nextLine();
+		
+
+		Account acc= new SpecialAccount(id, name, balance,grade);
+		/*
+		 * acc.id= id; acc.name=name; acc.balance=balance;
+		 */
+		
+		accs[cnt]=acc;
+		
+		cnt++;
+		
+	}
+	
 
 	Account searchAccById(String id){//계좌 찾기
 		int i=0;
