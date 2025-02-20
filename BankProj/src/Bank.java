@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import acc.Account;
+
 public class Bank {
 	Account[] accs = new Account[100];
 	int cnt=0;
@@ -52,7 +54,7 @@ public class Bank {
 		int i=0;
 		Account acc = null;
 		for(i=0;i<cnt;i++) {
-			if(accs[i].id.equals(id)) {
+			if(accs[i].getId().equals(id)) {
 				acc=accs[i];
 				break;
 			}
@@ -76,7 +78,7 @@ public class Bank {
 		int money=Integer.parseInt(sc.nextLine());
 		
 		acc.deposit(money);
-		acc.info();
+		acc.toString();
 		
 	}
 
@@ -96,7 +98,7 @@ public class Bank {
 		int money=Integer.parseInt(sc.nextLine());
 		
 		acc.withdraw(money);
-		acc.info();
+		acc.toString();
 	}
 
 	void accInfo() { //조회
@@ -111,13 +113,13 @@ public class Bank {
 			return;
 		}
 
-		acc.info();
+		acc.toString();
 	}
 
 	void allAccInfo() { //전체 계좌 조회
 		System.out.println("[전체 계좌조회]");
 		for(int i=0; i<cnt;i++) {
-			System.out.println(accs[i].info());
+			System.out.println(accs[i]);
 		}
 	}
 	
@@ -150,7 +152,7 @@ public class Bank {
 		}
 		racc.deposit(money);
 		
-		System.out.println(String.format("이체 후 남은 잔액 : %d", sacc.balance));
+		System.out.println(String.format("이체 후 남은 잔액 : %d", sacc.toString()));
 		
 	
 	}
