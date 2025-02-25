@@ -1,6 +1,6 @@
 package emp;
 
-public class PartTime extends Employee {
+public class PartTime extends Employee implements IBusinessTrip {
 	int time,payPerTime;
 	public PartTime() {}
 	public PartTime(String id, String name, int time, int payPerTime) {
@@ -32,5 +32,9 @@ public class PartTime extends Employee {
 //	public String toString() {
 //		return super.toString() + String.format("급여 : %d", getPay());
 //	}
-	
+	@Override
+	public void goBusinessTrip(int day) {
+		time+=day*24;
+	}
+
 }
